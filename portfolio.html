@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px 20px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #f4a261;
+        }
+
+        /* Hero Section */
+        #introduction {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            background: url('https://source.unsplash.com/random/1920x1080') center/cover no-repeat;
+        }
+
+        #introduction h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        #introduction p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            color: #444;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 5px;
+            background: #f4a261;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        /* Project Cards */
+        #projects .project-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            width: calc(33% - 40px);
+            margin: 10px;
+            text-align: left;
+        }
+
+        #projects .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #projects .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Skills List */
+        #skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #skills li {
+            background: #fff;
+            color: #4e54c8;
+            font-weight: bold;
+            margin: 10px;
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Form */
+        #contact form {
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact form label, #contact form input, #contact form button {
+            margin: 10px 0;
+        }
+
+        #contact form input, #contact form button {
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        #contact form button {
+            cursor: pointer;
+            background: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        #contact form button:hover {
+            background: #8f94fb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #projects .project-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #projects .project-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        /* Fade-in Animation */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#introduction">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Introduction Section -->
+        <section id="introduction">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Avantika Sarjare, a passionate developer. Check out my projects, skills, and get in touch!</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>DOCTOR APPOINTMENT</h3>
+                <p>A doctor appointment system streamlines the scheduling process, benefiting patients by offering online booking and reminders, while aiding healthcare providers in efficient management of appointments and resources.
+</p>
+            </div>
+            <div class="project-card">
+                <h3>FACE RECOGNITION</h3>
+                <p>Facial recognition is a technology that identifies or verifies a person's identity using their face.It works by analyzing unique facial features and comparing them to a database of known faces Sources and related content
+</p>
+            </div>
+            <div class="project-card">
+                <h3>ECOMMERCE WEBSITE</h3>
+                <p>An e-commerce website is an online platform that allows businesses to sell products and services directly to consumers over the internet.
+It provides a virtual storefront where customers can browse, select, and purchase items, making shopping convenient and accessible from anywhere</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li>HTML & CSS</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('header nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
